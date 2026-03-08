@@ -72,61 +72,14 @@
         font-size: 0.95rem;
     }
 
-    .footer-action {
-        padding: 30px 40px;
+    .footer-note {
+        padding: 20px 40px;
         background: #f8fafc;
         border-top: 1px solid #e2e8f0;
-    }
-
-    /* Checkbox Area */
-    .checkbox-container {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        margin-bottom: 25px;
-        cursor: pointer;
-    }
-
-    .checkbox-container input {
-        width: 22px;
-        height: 22px;
-        margin-right: 12px;
-        cursor: pointer;
-        accent-color: var(--brand-purple);
-    }
-
-    .checkbox-container label {
-        font-weight: 500;
-        color: var(--text-dark);
-        cursor: pointer;
-    }
-
-    /* Button Styling */
-    .btn-wrapper {
         text-align: center;
-    }
-
-    button {
-        background: var(--disabled);
-        color: white;
-        border: none;
-        padding: 18px 60px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        border-radius: 12px;
-        cursor: not-allowed;
-        transition: 0.3s;
-    }
-
-    button.active {
-        background: var(--brand-gradient);
-        cursor: pointer;
-        box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
-    }
-
-    button.active:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+        color: var(--text-light);
+        font-size: 0.85rem;
+        font-style: italic;
     }
 
     @media (max-width: 600px) { .grid-tools { grid-template-columns: 1fr; } }
@@ -162,38 +115,10 @@
         </div>
     </div>
 
-    <div class="footer-action">
-        <div class="checkbox-container">
-            <input type="checkbox" id="agreeCheck">
-            <label for="agreeCheck">I have read and agree to the Terms and Conditions</label>
-        </div>
-
-        <div class="btn-wrapper">
-            <button id="submitBtn" onclick="goSite()" disabled>I Agree & Continue</button>
-        </div>
-    </div>
+   <div class="footer-note"><center>
+        Terms & conditions
+    </center></div>
 </div>
-
-<script>
-    const checkbox = document.getElementById('agreeCheck');
-    const submitBtn = document.getElementById('submitBtn');
-
-    checkbox.addEventListener('change', function() {
-        if (this.checked) {
-            submitBtn.disabled = false;
-            submitBtn.classList.add('active');
-        } else {
-            submitBtn.disabled = true;
-            submitBtn.classList.remove('active');
-        }
-    });
-
-    function goSite(){
-        if(!submitBtn.disabled) {
-            window.location.href="https://www.useas.online/";
-        }
-    }
-</script>
 
 </body>
 </html>
