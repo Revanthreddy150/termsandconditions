@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USEAS | Terms and Conditions</title>
+
+<style>
+    :root {
+        --brand-purple: #7c3aed;
+        --brand-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        --bg-soft: #f8fafc;
+        --text-dark: #1e293b;
+        --text-light: #64748b;
+        --disabled: #cbd5e1;
+    }
+
+    body {
+        font-family: 'Inter', -apple-system, sans-serif;
+        background-color: var(--bg-soft);
+        color: var(--text-dark);
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .card {
+        background: white;
+        max-width: 850px;
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        overflow: hidden;
+    }
+
+    .header-banner {
+        background: var(--brand-gradient);
+        color: white;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .content {
+        padding: 40px;
+        line-height: 1.6;
+    }
+
+    h2 { color: var(--brand-purple); border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; margin-top: 30px; }
+    
+    .grid-tools {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .tool-tag {
+        background: #f1f5f9;
+        padding: 10px 15px;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        border-left: 4px solid var(--brand-purple);
+    }
+
+    .important-box {
+        background: #fff7ed;
+        border: 1px solid #fed7aa;
+        padding: 15px;
+        border-radius: 12px;
+        margin-top: 20px;
+        font-size: 0.95rem;
+    }
+
+    .footer-action {
+        padding: 30px 40px;
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    /* Checkbox Area */
+    .checkbox-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 25px;
+        cursor: pointer;
+    }
+
+    .checkbox-container input {
+        width: 22px;
+        height: 22px;
+        margin-right: 12px;
+        cursor: pointer;
+        accent-color: var(--brand-purple);
+    }
+
+    .checkbox-container label {
+        font-weight: 500;
+        color: var(--text-dark);
+        cursor: pointer;
+    }
+
+    /* Button Styling */
+    .btn-wrapper {
+        text-align: center;
+    }
+
+    button {
+        background: var(--disabled);
+        color: white;
+        border: none;
+        padding: 18px 60px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 12px;
+        cursor: not-allowed;
+        transition: 0.3s;
+    }
+
+    button.active {
+        background: var(--brand-gradient);
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    }
+
+    button.active:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    }
+
+    @media (max-width: 600px) { .grid-tools { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header-banner">
+        <h1 style="margin:0">USEAS PLATFORM</h1>
+        <p style="opacity:0.9">Terms of Service & Usage Policy</p>
+    </div>
+
+    <div class="content">
+        <p>Welcome to <b>USEAS</b>. By accessing our website or mobile application, you agree to comply with the following terms designed to protect our educational resources and your user experience.</p>
+
+        <h2>1. Services & Tools</h2>
+        <p>USEAS provides a suite of high-quality digital assets for students and developers, including:</p>
+        <div class="grid-tools">
+            <div class="tool-tag">📚 High-Quality Study Notes</div>
+            <div class="tool-tag">📝 Previous Year Papers</div>
+            <div class="tool-tag">💻 Lab Codes & Scripts</div>
+            <div class="tool-tag">🛠️ Advanced PDF Utilities</div>
+            <div class="tool-tag">🔔 Academic Alerts</div>
+            <div class="tool-tag">💡 Explanation Lessons</div>
+        </div>
+
+        <h2>2. Intellectual Property</h2>
+        <p>All content, including <b>Lab Codes, Short Answers, and Lessons</b>, are the property of USEAS. Users are granted a limited license for personal educational purposes.</p>
+
+        <div class="important-box">
+            <b>⚠️ Prohibited Activity:</b> You may not use the platform for any illegal activities or redistribute our premium notes and codes.
+        </div>
+    </div>
+
+    <div class="footer-action">
+        <div class="checkbox-container">
+            <input type="checkbox" id="agreeCheck">
+            <label for="agreeCheck">I have read and agree to the Terms and Conditions</label>
+        </div>
+
+        <div class="btn-wrapper">
+            <button id="submitBtn" onclick="goSite()" disabled>I Agree & Continue</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const checkbox = document.getElementById('agreeCheck');
+    const submitBtn = document.getElementById('submitBtn');
+
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            submitBtn.disabled = false;
+            submitBtn.classList.add('active');
+        } else {
+            submitBtn.disabled = true;
+            submitBtn.classList.remove('active');
+        }
+    });
+
+    function goSite(){
+        if(!submitBtn.disabled) {
+            window.location.href="https://www.useas.online/";
+        }
+    }
+</script>
+
+</body>
+</html>
